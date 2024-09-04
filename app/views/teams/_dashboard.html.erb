@@ -1,0 +1,40 @@
+
+  
+<div class="container mt-4">
+  <h1>Dashboard</h1>
+
+  <div class="row">
+      <!-- Team Members Section -->
+    <div class="col-md-6">
+      <h3>Team Members</h3>
+      <ul class="list-group">
+        <% if @team_members.length > 0%>
+          <% @team_members.each do |member| %>
+            <li class="list-group-item">
+              <%= member.name %> (<%= member.email %>)
+            </li>
+          <% end %>
+        <% else %>
+          <p>No team members yet</p>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- Workflows Section -->
+    <div class="col-md-6">
+      <h3>Workflows</h3>
+      <ul class="list-group">
+        <% if @workflows.length > 0%>
+          <% @workflows.each do |workflow| %>
+            <li class="list-group-item">
+              <strong><%= workflow.title %></strong>
+              <p><%= workflow.description %></p>
+            </li>
+          <% end %>
+        <% else %>
+          <p>No workflows yet</p>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
